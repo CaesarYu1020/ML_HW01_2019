@@ -35,7 +35,7 @@ for i in range(k):
     partial_train_targets = np.concatenate([train_targets[:i*num_val_samples],train_targets[(i+1)* num_val_samples:] ],axis=0)
 
     model = build_model()
-    model.fit(partial_train_data,partial_train_targets,epochs=num_epochs,batch_size=16,verbose=0)#模型训练silent模型
+    model.fit(partial_train_data,partial_train_targets,epochs=num_epochs,batch_size=200,verbose=2)#模型训练silent模型
     val_mse, val_mae = model.evaluate(val_data, val_targets, verbose=0) # 验证集上评估
     all_scores.append(val_mae)
 model = build_model()
